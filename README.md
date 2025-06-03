@@ -130,14 +130,8 @@ Score = rating * 1_000_000 + rents * 1_000 + recentlyActive / 1_000_000
 
 This flattens multi-factor logic into a single number for accurate pagination.
 
----
 
-## Author
-
-Made with ❤️ by Handika
----
-
-## 📁 Environment Variables
+## Environment Variables
 
 Create a file named `.env.local` in the `frontend-repo` directory with the following content:
 
@@ -147,10 +141,10 @@ NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project-auth-domain
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
 ```
 
-> 🔐 **Note**: Replace `your-project-auth-domain` and `your-project-id` with the actual values from your Firebase project. Avoid hardcoding sensitive keys in public repositories.
+> **Note**: Replace `your-project-auth-domain` and `your-project-id` with the actual values from your Firebase project. Avoid hardcoding sensitive keys in public repositories.
 ---
 
-## 🧠 Part 5: Personality & Technical Questions
+## Personality & Technical Questions
 
 **1. Based on this URL link https://www.reddit.com/settings (login into Reddit). Without looking at the code base, which part of the settings page is NOT server side component? Please explain how to get your answer.**  
 Elements like theme toggles (dark/light mode), notification preferences, or other instant UI changes are most likely not server-side components. To verify this, open the browser DevTools → go to the Network tab → filter by "document" or "XHR", and observe what gets triggered when changing settings. If there's no full HTML or server-rendered content being fetched, it suggests that part is handled client-side (likely via client-side JavaScript or hydration).
@@ -172,3 +166,10 @@ Yes, I use a MacBook Pro for development due to its excellent compatibility with
 
 **7. What is your immediate availability to start this job?**  
 I am available to start immediately after the interview and onboarding process is completed.
+
+---
+
+## Author
+
+Made with ❤️ by Handika
+---

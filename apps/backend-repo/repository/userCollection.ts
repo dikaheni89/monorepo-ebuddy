@@ -15,11 +15,18 @@ const calculatePotentialScore = (user: User): number => {
 
 export const updateUser = async (user: User): Promise<void> => {
   try {
-    const potentialScore = calculatePotentialScore(user);
+    const normalizedUser: User = {
+      ...user,
+      totalAverageWeightRatings: Number(user.totalAverageWeightRatings) || 0,
+      numberOfRents: Number(user.numberOfRents) || 0,
+      recentlyActive: Number(user.recentlyActive) || 0,
+    };
+
+    const potentialScore = calculatePotentialScore(normalizedUser);
 
     await db.collection(USERS_COLLECTION).doc(user.id).set(
       {
-        ...user,
+        ...normalizedUser,
         potentialScore,
       },
       { merge: true }

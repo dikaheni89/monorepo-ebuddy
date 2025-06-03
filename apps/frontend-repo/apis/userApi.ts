@@ -5,12 +5,11 @@ import { auth } from '@/app/config/firebase';
 
 const BASE_URL = 'http://localhost:3000/api';
 
-// Ambil token Firebase dari user yang sedang login
 const getAuthToken = async (): Promise<string> => {
   const currentUser = auth.currentUser;
   if (!currentUser) throw new Error('User not authenticated');
 
-  return await currentUser.getIdToken(); // Dapatkan token ID yang valid
+  return await currentUser.getIdToken();
 };
 
 export const fetchUser = async (id: string): Promise<User> => {

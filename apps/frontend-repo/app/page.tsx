@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { onAuthStateChanged } from 'firebase/auth';
 import UpdateButton from '@/components/UpdateButton';
 import {auth} from "@/app/config/firebase";
+import UpdateUserForm from "@/components/UpdateUserForm";
 
 export default function MainPage() {
   const router = useRouter();
@@ -31,6 +32,7 @@ export default function MainPage() {
       <h1>Main Page</h1>
       {userEmail && <p>Welcome, {userEmail}</p>}
       <UpdateButton />
+      <UpdateUserForm />
     </main>
   );
 }
